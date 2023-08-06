@@ -11,6 +11,7 @@ import { RegisterComponent } from './views/register/register.component';
 import { HomeComponent } from './views/home/home.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
@@ -36,6 +37,7 @@ import { JwtInterceptorInterceptor } from './interceptors/jwt-interceptor.interc
     MatFormFieldModule,
     MatSelectModule,
     MatInputModule,
+    MatButtonModule,
     ReactiveFormsModule,
     HttpClientModule,
   ],

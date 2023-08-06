@@ -13,3 +13,13 @@ body {
     padding: 0;
     box-sizing: border-box;
 }
+
+.full-width {
+    width: 100%;
+}
+
+.centered-element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
