@@ -7,17 +7,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
-import { PanelComponent } from './views/panel/panel.component';
 import { HomeComponent } from './views/home/home.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { DashboardComponent } from './views/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    PanelComponent,
     HomeComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
