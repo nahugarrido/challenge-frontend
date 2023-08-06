@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { CookieService } from 'ngx-cookie-service';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
@@ -10,12 +9,11 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  form: any;
+  form!: FormGroup;
 
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private cookieService: CookieService,
     private authService: AuthenticationService
   ) {}
 
@@ -32,8 +30,11 @@ export class LoginComponent implements OnInit {
   }
 
   send(): any {
+    if (this.form.invalid) {
+      return;
+    }
     this.authService.login(this.form.value).subscribe((data) => {
-      this.cookieService.set('token', data.token);
+      sessionStorage.setItem('token', data.token);
       this.router.navigate(['/', 'panel']);
     });
   }
