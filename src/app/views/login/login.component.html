@@ -3,19 +3,28 @@
     <h1>Welcome to Unicomer</h1>
   </div>
   <div class="login-second-half">
-    <mat-form-field>
-      <mat-label>Input</mat-label>
-      <input matInput />
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Select</mat-label>
-      <!--  <mat-select>
-        <mat-option value="one">ID</mat-option>
-      </mat-select> -->
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Textarea</mat-label>
-      <textarea matInput></textarea>
-    </mat-form-field>
+    <div [formGroup]="form">
+      <div>
+        <mat-form-field>
+          <mat-label>Tipo</mat-label>
+          <input matInput formControlName="type" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <mat-label>DNI</mat-label>
+          <input matInput formControlName="dni" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <mat-label>Contraseña</mat-label>
+          <input matInput formControlName="password" />
+        </mat-form-field>
+      </div>
+    </div>
+    <pre>
+      {{ form.value | json }}
+    </pre>
   </div>
 </section>
