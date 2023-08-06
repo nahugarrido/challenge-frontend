@@ -12,7 +12,7 @@ export class TransactionService {
 
   getTransactionsByUserID(id: string): Observable<Transaction[]> {
     return this.http.get<Transaction[]>(
-      `${environment.baseURL}api/v1/transactions/${id}`
+      `${environment.baseURL}transactions/${id}`
     );
   }
 }

@@ -6,11 +6,18 @@
 }
 
 .login-first-half {
-    width: 60%;
+    width: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #fff;
 }
 
 .login-second-half {
-    width: 40%;
-    background-color: rgb(204, 220, 179);
+    width: 45%;
+    background-color: #353a61;
+}
+
+.colored-text {
+    color: red;
 }

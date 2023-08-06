@@ -13,9 +13,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { LoanComponent } from './components/loan/loan.component';
 import { LastTransactionsComponent } from './components/last-transactions/last-transactions.component';
+import { JwtInterceptorInterceptor } from './interceptors/jwt-interceptor.interceptor';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,13 @@ import { LastTransactionsComponent } from './components/last-transactions/last-t
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptorInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

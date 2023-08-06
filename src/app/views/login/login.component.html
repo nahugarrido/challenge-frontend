@@ -1,6 +1,6 @@
 <section class="login-section">
   <div class="login-first-half">
-    <h1>Welcome to Unicomer</h1>
+    <h1>Welcome to <span class="colored-text">Unicomer</span></h1>
   </div>
   <div class="login-second-half">
     <div [formGroup]="form">
@@ -13,7 +13,7 @@
       <div>
         <mat-form-field>
           <mat-label>DNI</mat-label>
-          <input matInput formControlName="dni" />
+          <input matInput formControlName="userID" />
         </mat-form-field>
       </div>
       <div>
@@ -23,8 +23,9 @@
         </mat-form-field>
       </div>
     </div>
-    <pre>
-      {{ form.value | json }}
-    </pre>
+    <button (click)="send()">SEND</button>
+    <!--     <pre>
+       {{ form.value | json }} 
+    </pre> -->
   </div>
 </section>
