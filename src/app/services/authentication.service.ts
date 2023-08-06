@@ -13,14 +13,28 @@ export class AuthenticationService {
 
   constructor(private http: HttpClient) {}
 
-  public login(loginData: LoginDTO): Observable<LoginResponse> {
+  login(loginData: LoginDTO): Observable<LoginResponse> {
     return this.http.post<LoginResponse>(
       `${this.baseURL}/authenticate`,
       loginData
     );
   }
 
-  public isAuthenticated(): boolean {
+  isAuthenticated(): boolean {
     return true;
+  }
+
+  saveUserData(token: string, userId: string): void {
+    sessionStorage.setItem('token', token);
+    sessionStorage.setItem('active-user-id', userId);
+  }
+
+  cleanUserData(): void {
+    sessionStorage.removeItem('token');
+    sessionStorage.removeItem('active-user-id');
+  }
+
+  getActiveUserId(): string | null {
+    return sessionStorage.getItem('active-user-id');
   }
 }

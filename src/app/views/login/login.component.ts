@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
@@ -23,18 +23,20 @@ export class LoginComponent implements OnInit {
 
   private initForm(): void {
     this.form = this.fb.group({
-      type: [''],
-      userID: [''],
-      password: [''],
+      type: ['', [Validators.required]],
+      userID: ['', [Validators.required]],
+      password: ['', [Validators.required]],
     });
   }
 
   send(): any {
+    this.form.markAllAsTouched();
     if (this.form.invalid) {
       return;
     }
+    const activeUserId = this.form.value.userID;
     this.authService.login(this.form.value).subscribe((data) => {
-      sessionStorage.setItem('token', data.token);
+      this.authService.saveUserData(data.token, activeUserId);
       this.router.navigate(['/', 'panel']);
     });
   }

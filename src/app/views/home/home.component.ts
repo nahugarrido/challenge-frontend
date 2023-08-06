@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
 
   updateTransactions() {
     this._transactionService
-      .getTransactionsByUserID('123')
+      .getTransactionsByUserID('30111222')
       .subscribe((transactions) => {
         this.transactions = transactions;
       });
