@@ -1,0 +1,19 @@
+section {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sections-container {
+    width: 70%;
+    min-height: 50%;
+}
+
+@media (max-width: 768px) {
+    .sections-container {
+        width: 100%;
+        min-height: 100%;
+    }
+}
