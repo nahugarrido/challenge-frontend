@@ -8,6 +8,13 @@ import { Transaction } from 'src/app/models/transaction.model';
 })
 export class LastTransactionsComponent implements OnChanges {
   @Input() transactions: Transaction[] = [];
+  displayedColumns: string[] = [
+    'movementType',
+    'header',
+    'amount',
+    'date',
+    'status',
+  ];
 
   ngOnChanges(changes: SimpleChanges): void {
     this.transactions = changes['transactions'].currentValue;
