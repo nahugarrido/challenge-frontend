@@ -35,9 +35,14 @@ export class LoginComponent implements OnInit {
       return;
     }
     const activeUserId = this.form.value.userID;
-    this.authService.login(this.form.value).subscribe((data) => {
-      this.authService.saveUserData(data.token, activeUserId);
-      this.router.navigate(['/', 'dashboard']);
-    });
+    this.authService.login(this.form.value).subscribe(
+      (data) => {
+        this.authService.saveUserData(data.token, activeUserId);
+        this.router.navigate(['/', 'dashboard']);
+      },
+      () => {
+        this.authService.cleanUserData();
+      }
+    );
   }
 }

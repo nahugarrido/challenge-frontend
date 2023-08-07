@@ -24,6 +24,7 @@ export class AuthGuard implements CanActivate {
       return true;
     } else {
       console.log('No podes jeje');
+      this.auth.cleanUserData();
       this.router.navigate(['/login']);
       return false;
     }

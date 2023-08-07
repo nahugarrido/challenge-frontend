@@ -5,12 +5,14 @@ import { LoginDTO } from '../models/login-dto.model';
 import { Observable } from 'rxjs';
 import { LoginResponse } from '../models/login-response.model';
 import { SingupDTO } from '../models/signup-dto.model';
+import jwt_decode from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthenticationService {
   baseURL: string = environment.baseURL + 'auth';
+  jwt_decode = jwt_decode;
 
   constructor(private http: HttpClient) {}
 
@@ -22,7 +24,12 @@ export class AuthenticationService {
   }
 
   isAuthenticated(): boolean {
-    return false;
+    const token = this.getUserToken();
+    if (!token) {
+      return false;
+    }
+    const decodedToken: any = this.jwt_decode(token);
+    return decodedToken.exp > Date.now() / 1000;
   }
 
   saveUserData(token: string, userId: string): void {
@@ -33,6 +40,10 @@ export class AuthenticationService {
   cleanUserData(): void {
     sessionStorage.removeItem('token');
     sessionStorage.removeItem('active-user-id');
+  }
+
+  getUserToken(): string {
+    return sessionStorage.getItem('token') as string;
   }
 
   getActiveUserId(): string | null {
