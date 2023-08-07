@@ -1,0 +1,44 @@
+<section class="last-transactions-container">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z12">
+    <ng-container matColumnDef="movementType">
+      <td mat-cell *matCellDef="let element">{{ element.movementType }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="header">
+      <td mat-cell *matCellDef="let element">
+        <strong>{{ element.header }}</strong> <br />
+        <span class="transaction-type">{{ element.transactionType }}</span>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="amount">
+      <td mat-cell *matCellDef="let element">
+        <strong>{{ element.amount | currency }}</strong>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="date">
+      <td mat-cell *matCellDef="let element">
+        <strong>{{ element.date | date }}</strong>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <td mat-cell *matCellDef="let element">
+        <strong
+          [ngClass]="{
+            'green-text': element.status === 'COMPLETED',
+            'red-text': element.status === 'CANCELED',
+            'gray-text': element.status === 'PENDING'
+          }"
+          >{{ element.status }}</strong
+        >
+      </td>
+    </ng-container>
+
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons>
+  </mat-paginator>
+</section>
