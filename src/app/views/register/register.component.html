@@ -2,8 +2,10 @@
   <div class="register-content">
     <div [formGroup]="form" class="form-container">
       <div class="logo-container">
-        <h1>LOGO</h1>
+        <h1>Sign Up</h1>
+        <p>It's quick and easy.</p>
       </div>
+      <hr />
       <div>
         <mat-form-field class="full-width">
           <mat-label>Type</mat-label>
@@ -39,23 +41,25 @@
       <div>
         <mat-form-field class="full-width">
           <mat-label>Password</mat-label>
-          <input matInput formControlName="password" />
+          <input type="password" matInput formControlName="password" />
         </mat-form-field>
       </div>
-      <button
-        mat-raised-button
-        color="accent"
-        class="full-width"
-        (click)="signUp()"
-      >
-        Sing Up
-      </button>
+      <div class="submit-container">
+        <button
+          mat-raised-button
+          color="accent"
+          class="full-width"
+          (click)="signUp()"
+        >
+          Sign Up
+        </button>
+      </div>
       <!-- <pre>
            {{ form.value | json }} 
         </pre> -->
     </div>
 
-    <div class="signup-section centered-element">
+    <div class="login-section centered-element">
       <p>Already have an account? Log in <a href="/login">here</a></p>
     </div>
   </div>

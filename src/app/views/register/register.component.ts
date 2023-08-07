@@ -25,6 +25,9 @@ export class RegisterComponent implements OnInit {
     this.form = this.fb.group({
       type: ['', [Validators.required]],
       userID: ['', [Validators.required]],
+      email: ['', [Validators.required]],
+      firstName: ['', [Validators.required]],
+      lastName: ['', [Validators.required]],
       password: ['', [Validators.required]],
     });
   }
@@ -34,10 +37,6 @@ export class RegisterComponent implements OnInit {
     if (this.form.invalid) {
       return;
     }
-    const activeUserId = this.form.value.userID;
-    this.authService.login(this.form.value).subscribe((data) => {
-      this.authService.saveUserData(data.token, activeUserId);
-      this.router.navigate(['/', 'panel']);
-    });
+    console.log(this.form.value);
   }
 }
