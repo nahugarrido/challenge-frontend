@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'challenge-frontend';
   faHouse = faHouse;
-  readonly TIME_INTERVAL = 10000;
+  readonly TIME_INTERVAL = 300000;
 
   constructor(
     private authService: AuthenticationService,
