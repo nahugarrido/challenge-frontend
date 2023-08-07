@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import { LoginDTO } from '../models/login-dto.model';
 import { Observable } from 'rxjs';
 import { LoginResponse } from '../models/login-response.model';
+import { SingupDTO } from '../models/signup-dto.model';
 
 @Injectable({
   providedIn: 'root',
@@ -21,7 +22,7 @@ export class AuthenticationService {
   }
 
   isAuthenticated(): boolean {
-    return true;
+    return false;
   }
 
   saveUserData(token: string, userId: string): void {
@@ -36,5 +37,9 @@ export class AuthenticationService {
 
   getActiveUserId(): string | null {
     return sessionStorage.getItem('active-user-id');
+  }
+
+  signUp(userData: SingupDTO): Observable<any> {
+    return this.http.post<any>(`${this.baseURL}/register`, userData);
   }
 }

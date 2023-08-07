@@ -38,5 +38,8 @@ export class RegisterComponent implements OnInit {
       return;
     }
     console.log(this.form.value);
+    this.authService
+      .signUp(this.form.value)
+      .subscribe(() => this.router.navigateByUrl('/login'));
   }
 }
