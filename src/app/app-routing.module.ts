@@ -8,8 +8,9 @@ import { DashboardComponent } from './views/dashboard/dashboard.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: '', redirectTo: 'login', pathMatch: 'full' }, // Ruta por defecto dentro de PanelComponent
   {
-    path: 'panel',
+    path: 'dashboard',
     component: DashboardComponent,
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' }, // Ruta por defecto dentro de PanelComponent
