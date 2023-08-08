@@ -8,23 +8,34 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
-import { HomeComponent } from './views/home/home.component';
-import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { LoanComponent } from './components/loan/loan.component';
 import { LastTransactionsComponent } from './components/last-transactions/last-transactions.component';
 import { JwtInterceptorInterceptor } from './interceptors/jwt-interceptor.interceptor';
 import { MaterialModule } from './shared/modules/material.module';
+import { DashboardMaterialComponent } from './material/dashboard-material/dashboard-material.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { NavigationMaterialComponent } from './material/navigation-material/navigation-material.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent,
-    DashboardComponent,
     LoanComponent,
     LastTransactionsComponent,
+    DashboardMaterialComponent,
+    NavigationMaterialComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,6 +45,17 @@ import { MaterialModule } from './shared/modules/material.module';
     ReactiveFormsModule,
     HttpClientModule,
     MaterialModule,
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule,
+    MatIconModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
   ],
   providers: [
     {
