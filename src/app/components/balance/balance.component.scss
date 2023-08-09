@@ -1,0 +1,14 @@
+.balance {
+    display: flex;
+    justify-content: baseline;
+    margin-left: 20px;
+    font-size: 3em;
+    font-weight: 600;
+}
+
+
+@media(max-width: 768px) {
+    .balance {
+        font-size: 2.2em;
+    }
+}

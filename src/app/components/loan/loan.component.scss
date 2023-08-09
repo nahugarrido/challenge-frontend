@@ -1,0 +1,24 @@
+.loan-container {
+    color: #262626;
+}
+
+mat-paginator {
+    width: max-content;
+    padding: 1rem 0;
+    margin: auto;
+}
+
+.loanAmount {
+    padding-left: 20px;
+}
+
+.cancel-button {
+    width: 5rem  !important;
+    &:hover {
+        cursor: default;
+    }
+}
+
+.pay-button {
+    width:  5rem !important ;   
+}

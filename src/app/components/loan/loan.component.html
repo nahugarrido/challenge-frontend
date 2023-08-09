@@ -1,1 +1,71 @@
-<!-- <button (click)="emitTransactionEvent()">Emit event</button> -->
+<section class="loan-container">
+  <table mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="totalAmount">
+      <th mat-header-cell *matHeaderCellDef>Total amount</th>
+      <td mat-cell *matCellDef="let element">
+        <strong class="loanAmount green-text">{{
+          element.totalAmount | currency
+        }}</strong>
+        <br />
+        <span class="gray-text">Without interest</span>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="number">
+      <th mat-header-cell *matHeaderCellDef>Installment</th>
+      <td mat-cell *matCellDef="let element">
+        <strong>{{ element.number }}</strong>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef>Date of Issue</th>
+      <td mat-cell *matCellDef="let element">
+        <span class="gray-text">{{ element.date | date }}</span>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="amount">
+      <th mat-header-cell *matHeaderCellDef>Amount</th>
+      <td mat-cell *matCellDef="let element">
+        <strong>{{ element.amount | currency }}</strong>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="interestRate">
+      <th mat-header-cell *matHeaderCellDef>Interest Rate</th>
+      <td mat-cell *matCellDef="let element">
+        <span class="gray-text"
+          >{{ element.interestRate | percent }} Interest Rate</span
+        >
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef>Status</th>
+      <td mat-cell *matCellDef="let element">
+        <button
+          *ngIf="element.status === 'PAID'"
+          mat-raised-button
+          color="primary"
+          class="cancel-button"
+        >
+          Canceled
+        </button>
+        <button
+          *ngIf="element.status === 'UNPAID'"
+          mat-raised-button
+          color="accent"
+          class="pay-button"
+          (click)="openPayModal(element.id)"
+        >
+          Pay
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons>
+  </mat-paginator>
+</section>

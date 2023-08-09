@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatLabel } from '@angular/material/form-field';
 
 @NgModule({
   imports: [
@@ -14,6 +17,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatButtonModule,
     MatTableModule,
     MatPaginatorModule,
+    MatCheckboxModule,
+    MatSidenavModule,
   ],
   exports: [
     MatFormFieldModule,
@@ -22,6 +27,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatButtonModule,
     MatTableModule,
     MatPaginatorModule,
+    MatCheckboxModule,
+    MatSidenavModule,
   ],
 })
 export class MaterialModule {}

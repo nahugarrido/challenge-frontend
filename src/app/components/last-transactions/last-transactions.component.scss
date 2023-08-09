@@ -1,13 +1,65 @@
+.last-transactions-container {
+    color: #262626;
+
+    .icon-arrow {
+        font-size: 30px;
+    }
+
+    .expense {
+        width: 20px;
+    }
+
+    .transaction {
+        width: 130px;
+    }
+
+    .amount {
+        width: 30px;
+    }
+    .date {
+        width: 140px;
+    } 
+
+    .rotate180 {
+        transform: rotate(180) !important;
+    }
+
+}
+
 .transaction-type {
     opacity: 0.6;
 }
 
-.green-text {
-    color: #8bc8bc;
+@media(max-width: 768px) {
+    .last-transactions-container {
+        .icon-arrow {
+            font-size: 30px;
+        }
+    
+        .expense {
+            width: 20px;
+        }
+    
+        .transaction {
+            min-width: 130px;
+        }
+    
+        .amount {
+            width: 30px;
+        }
+        .date {
+            min-width: 140px;
+        } 
+    
+        .rotate180 {
+            transform: rotate(180) !important;
+        }
+    
+    }
 }
-.red-text {
-    color: #ed9699;
-}
-.gray-text {
-    color: #b4b4bf;
+
+mat-paginator {
+    width: max-content;
+    padding: 1rem 0;
+    margin: auto;
 }
