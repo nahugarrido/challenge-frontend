@@ -9,7 +9,7 @@
   >
     <mat-toolbar class="logo"><span>LOGO</span></mat-toolbar>
     <mat-nav-list>
-      <!--       <a mat-list-item routerLink="/dashboard/home">Home</a> -->
+      <a mat-list-item routerLink="/dashboard/home">Home</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -24,7 +24,16 @@
       >
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span> </span>
+      <div class="navbar-2">
+        <div *ngIf="user" class="user-navbar">
+          <div class="profile-picture">
+            <img src="{{ user.picture }}" alt="" />
+          </div>
+          <span>
+            <strong>{{ user.firstname }} {{ user.lastname }}</strong>
+          </span>
+        </div>
+      </div>
     </mat-toolbar>
     <router-outlet></router-outlet>
   </mat-sidenav-content>

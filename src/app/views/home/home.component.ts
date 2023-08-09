@@ -83,7 +83,6 @@ export class HomeComponent {
     const activeUserID = this.authService.getActiveUserId() as string;
     this.userService.getUserInformation(activeUserID).subscribe((user) => {
       this.user = user;
-      console.log('USER: ' + JSON.stringify(this.user));
     });
   }
 }

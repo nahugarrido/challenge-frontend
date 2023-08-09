@@ -35,7 +35,6 @@ export class LastTransactionsComponent implements OnChanges, AfterViewInit {
     this.transactions = changes['transactions'].currentValue;
     this.dataSource = new MatTableDataSource<Transaction>(this.transactions);
     this.dataSource.paginator = this.paginator;
-    console.log(this.transactions);
   }
 
   ngAfterViewInit() {

@@ -38,7 +38,6 @@ export class LoanComponent implements OnChanges, AfterViewInit {
     this.installments = changes['installments'].currentValue;
     this.dataSource = new MatTableDataSource<Installment>(this.installments);
     this.dataSource.paginator = this.paginator;
-    console.log(this.installments);
   }
 
   ngAfterViewInit() {
