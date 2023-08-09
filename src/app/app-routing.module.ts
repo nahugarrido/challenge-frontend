@@ -2,21 +2,21 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
-import { NavigationMaterialComponent } from './views/navigation-material/navigation-material.component';
-import { DashboardMaterialComponent } from './views/dashboard-material/dashboard-material.component';
+import { DashboardComponent } from './views/dashboard/dashboard.component';
+import { HomeComponent } from './views/home/home.component';
 import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: '', redirectTo: 'login', pathMatch: 'full' }, // Ruta por defecto dentro de PanelComponent
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   {
     path: 'dashboard',
-    component: NavigationMaterialComponent,
+    component: DashboardComponent,
     canActivate: [AuthGuard],
     children: [
-      { path: '', redirectTo: 'home', pathMatch: 'full' }, // Ruta por defecto dentro de PanelComponent
-      { path: 'home', component: DashboardMaterialComponent }, // Ruta para el componente HomeComponent dentro de PanelComponent
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: 'home', component: HomeComponent },
     ],
   },
 ];

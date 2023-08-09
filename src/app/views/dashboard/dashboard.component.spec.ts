@@ -6,7 +6,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
-import { NavigationMaterialComponent } from './navigation-material.component';
+import { NavigationMaterialComponent } from './dashboard.component';
 
 describe('NavigationMaterialComponent', () => {
   let component: NavigationMaterialComponent;
@@ -22,7 +22,7 @@ describe('NavigationMaterialComponent', () => {
         MatListModule,
         MatSidenavModule,
         MatToolbarModule,
-      ]
+      ],
     }).compileComponents();
   }));
 

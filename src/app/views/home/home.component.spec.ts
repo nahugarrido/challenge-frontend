@@ -6,7 +6,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 
-import { DashboardMaterialComponent } from './dashboard-material.component';
+import { DashboardMaterialComponent } from './home.component';
 
 describe('DashboardMaterialComponent', () => {
   let component: DashboardMaterialComponent;
@@ -22,7 +22,7 @@ describe('DashboardMaterialComponent', () => {
         MatGridListModule,
         MatIconModule,
         MatMenuModule,
-      ]
+      ],
     }).compileComponents();
   }));
 

@@ -6,11 +6,11 @@ import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
-  selector: 'app-navigation-material',
-  templateUrl: './navigation-material.component.html',
-  styleUrls: ['./navigation-material.component.css'],
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.scss'],
 })
-export class NavigationMaterialComponent {
+export class DashboardComponent {
   readonly TIME_INTERVAL = 300000;
 
   constructor(

@@ -13,13 +13,13 @@ import { LoanComponent } from './components/loan/loan.component';
 import { LastTransactionsComponent } from './components/last-transactions/last-transactions.component';
 import { JwtInterceptorInterceptor } from './interceptors/jwt-interceptor.interceptor';
 import { MaterialModule } from './shared/modules/material.module';
-import { DashboardMaterialComponent } from './views/dashboard-material/dashboard-material.component';
+import { HomeComponent } from './views/home/home.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { NavigationMaterialComponent } from './views/navigation-material/navigation-material.component';
+import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
@@ -35,8 +35,8 @@ import { CapitalizePipe } from 'src/app/pipes/capitalize.pipe';
     RegisterComponent,
     LoanComponent,
     LastTransactionsComponent,
-    DashboardMaterialComponent,
-    NavigationMaterialComponent,
+    HomeComponent,
+    DashboardComponent,
     CapitalizePipe,
   ],
   imports: [

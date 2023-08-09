@@ -9,11 +9,11 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { User } from 'src/app/models/user.model';
 
 @Component({
-  selector: 'app-dashboard-material',
-  templateUrl: './dashboard-material.component.html',
-  styleUrls: ['./dashboard-material.component.scss'],
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss'],
 })
-export class DashboardMaterialComponent {
+export class HomeComponent {
   transactions: Transaction[] = [];
   installments: Installment[] = [];
   title = 'challenge-frontend';
@@ -44,7 +44,15 @@ export class DashboardMaterialComponent {
     this.transactionService
       .getTransactionsByUserID(activeUserID)
       .subscribe((transactions) => {
-        this.transactions = transactions;
+        this.transactions = transactions.sort((a, b) => {
+          if (a.date > b.date) {
+            return -1;
+          } else if (a.date < b.date) {
+            return 1;
+          } else {
+            return 0;
+          }
+        });
       });
   }
 
@@ -55,7 +63,15 @@ export class DashboardMaterialComponent {
       this.loanService
         .getInstallmentsByUserId(userId)
         .subscribe((installments) => {
-          this.installments = installments;
+          this.installments = installments.sort((a, b) => {
+            if (a.date > b.date) {
+              return -1;
+            } else if (a.date < b.date) {
+              return 1;
+            } else {
+              return 0;
+            }
+          });
         });
 
       console.log(this.installments);
