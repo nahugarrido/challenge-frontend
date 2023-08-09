@@ -13,19 +13,20 @@ import { LoanComponent } from './components/loan/loan.component';
 import { LastTransactionsComponent } from './components/last-transactions/last-transactions.component';
 import { JwtInterceptorInterceptor } from './interceptors/jwt-interceptor.interceptor';
 import { MaterialModule } from './shared/modules/material.module';
-import { DashboardMaterialComponent } from './material/dashboard-material/dashboard-material.component';
+import { DashboardMaterialComponent } from './views/dashboard-material/dashboard-material.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { NavigationMaterialComponent } from './material/navigation-material/navigation-material.component';
+import { NavigationMaterialComponent } from './views/navigation-material/navigation-material.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { CapitalizePipe } from 'src/app/pipes/capitalize.pipe';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { MatSortModule } from '@angular/material/sort';
     LastTransactionsComponent,
     DashboardMaterialComponent,
     NavigationMaterialComponent,
+    CapitalizePipe,
   ],
   imports: [
     BrowserModule,

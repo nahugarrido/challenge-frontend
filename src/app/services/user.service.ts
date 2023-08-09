@@ -13,4 +13,8 @@ export class UserService {
   getUserInformation(id: string): Observable<User> {
     return this.http.get<User>(`${environment.baseURL}user/${id}`);
   }
+
+  getUserBalance(id: number): Observable<number> {
+    return this.http.get<number>(`${environment.baseURL}user/balance/${id}`);
+  }
 }

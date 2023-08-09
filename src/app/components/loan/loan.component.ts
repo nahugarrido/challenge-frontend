@@ -16,7 +16,7 @@ import { Installment } from 'src/app/models/installment.model';
 @Component({
   selector: 'app-loan',
   templateUrl: './loan.component.html',
-  styleUrls: ['./loan.component.css'],
+  styleUrls: ['./loan.component.scss'],
 })
 export class LoanComponent implements OnChanges, AfterViewInit {
   @Input() installments: Installment[] = [];
@@ -47,5 +47,9 @@ export class LoanComponent implements OnChanges, AfterViewInit {
 
   emitTransactionEvent(): void {
     this.updateTransactions.emit();
+  }
+
+  openPayModal(id: number): void {
+    console.log('clicked :' + id);
   }
 }

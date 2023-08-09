@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
-import { NavigationMaterialComponent } from './material/navigation-material/navigation-material.component';
-import { DashboardMaterialComponent } from './material/dashboard-material/dashboard-material.component';
+import { NavigationMaterialComponent } from './views/navigation-material/navigation-material.component';
+import { DashboardMaterialComponent } from './views/dashboard-material/dashboard-material.component';
 import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [

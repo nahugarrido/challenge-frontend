@@ -1,0 +1,42 @@
+.grid-container {
+  margin: 20px;
+}
+
+.mat-h1 {
+  margin-left: 20px;
+  font-size: 2.3em;
+ font-weight: 700;
+}
+
+.dashboard-card {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border-radius: 25px !important;
+  overflow-x: auto;
+
+  mat-card-title {
+    width: max-content !important;
+    padding: 20px;
+    font-weight: 700;
+    color: rgb(27, 27, 27) !important;
+  }
+}
+
+.more-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.dashboard-card-content {
+  text-align: center;
+}
+
+@media(max-width: 768px) {
+  .card-button {
+    display: none;
+  }
+}
