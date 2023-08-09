@@ -27,6 +27,10 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { CapitalizePipe } from 'src/app/pipes/capitalize.pipe';
+import { BalanceComponent } from './components/balance/balance.component';
+import { IncomeComponent } from './components/income/income.component';
+import { ExpenseComponent } from './components/expense/expense.component';
+import { GraphComponent } from './components/graph/graph.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +42,10 @@ import { CapitalizePipe } from 'src/app/pipes/capitalize.pipe';
     HomeComponent,
     DashboardComponent,
     CapitalizePipe,
+    BalanceComponent,
+    IncomeComponent,
+    ExpenseComponent,
+    GraphComponent,
   ],
   imports: [
     BrowserModule,

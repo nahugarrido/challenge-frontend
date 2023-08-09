@@ -21,7 +21,9 @@
             </mat-menu>
           </mat-card-title>
         </mat-card-header>
-        <mat-card-content class="dashboard-card-content"> </mat-card-content>
+        <mat-card-content class="dashboard-card-content">
+          <app-balance [balance]="user.balance"></app-balance>
+        </mat-card-content>
       </mat-card>
     </mat-grid-tile>
     <!--  -->
@@ -44,7 +46,9 @@
             </mat-menu>
           </mat-card-title>
         </mat-card-header>
-        <mat-card-content class="dashboard-card-content"> </mat-card-content>
+        <mat-card-content class="dashboard-card-content">
+          <app-income [transactions]="transactions"></app-income>
+        </mat-card-content>
       </mat-card>
     </mat-grid-tile>
     <!--  -->
@@ -67,7 +71,9 @@
             </mat-menu>
           </mat-card-title>
         </mat-card-header>
-        <mat-card-content class="dashboard-card-content"> </mat-card-content>
+        <mat-card-content class="dashboard-card-content">
+          <app-expense [transactions]="transactions"></app-expense>
+        </mat-card-content>
       </mat-card>
     </mat-grid-tile>
     <!--  -->
@@ -90,11 +96,13 @@
             </mat-menu>
           </mat-card-title>
         </mat-card-header>
-        <mat-card-content class="dashboard-card-content"> </mat-card-content>
+        <mat-card-content class="dashboard-card-content">
+          <app-graph [transactions]="transactions"></app-graph>
+        </mat-card-content>
       </mat-card>
     </mat-grid-tile>
     <!--  -->
-    <mat-grid-tile [colspan]="isMobile ? 6 : 3" [rowspan]="isMobile ? 4 : 2">
+    <mat-grid-tile [colspan]="isMobile ? 6 : 3" [rowspan]="isMobile ? 3 : 2">
       <mat-card class="dashboard-card">
         <mat-card-header>
           <mat-card-title>
@@ -121,7 +129,7 @@
       </mat-card>
     </mat-grid-tile>
     <!--  -->
-    <mat-grid-tile [colspan]="6" [rowspan]="isMobile ? 4 : 2">
+    <mat-grid-tile [colspan]="6" [rowspan]="isMobile ? 3 : 2">
       <mat-card class="dashboard-card">
         <mat-card-header>
           <mat-card-title>

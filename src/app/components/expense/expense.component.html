@@ -1,0 +1,12 @@
+<div class="card-small">
+  <p>{{ currentMonthExpenses | currency }}</p>
+  <span
+    class="icon-percent"
+    [ngClass]="{
+      'green-text': currentMonthExpenses > lastMonthExpenses,
+      'red-text': currentMonthExpenses < lastMonthExpenses,
+    }"
+  >
+    {{ expensesVariationPercentage.toFixed(2) }}%
+  </span>
+</div>

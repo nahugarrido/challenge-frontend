@@ -13,6 +13,12 @@
 .logo {
   display: flex;
   justify-content: center;
+  height: 14vh;
+  border: 1px solid #e0e0e0;
+  span {
+    font-size: 2em;
+    font-weight: 600;
+  }
 }
 
 .mat-toolbar.mat-primary {
@@ -22,7 +28,8 @@
 }
 
 .navbar {
-  background-color: #fafafa;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .button-sidebar {

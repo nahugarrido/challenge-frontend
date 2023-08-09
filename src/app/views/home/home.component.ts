@@ -16,6 +16,7 @@ import { User } from 'src/app/models/user.model';
 export class HomeComponent {
   transactions: Transaction[] = [];
   installments: Installment[] = [];
+  user!: User;
   title = 'challenge-frontend';
   isMobile = false;
   rowHeightValue = '250px';
@@ -31,11 +32,13 @@ export class HomeComponent {
   ngOnInit(): void {
     this.updateTransactions();
     this.updateInstallments();
+    this.updateUser();
+
     this.breakpointObserver
       .observe([Breakpoints.HandsetPortrait])
       .subscribe((result) => {
         this.isMobile = result.matches;
-        this.rowHeightValue = result.matches ? '130px' : '250px';
+        this.rowHeightValue = result.matches ? '160px' : '250px';
       });
   }
 
@@ -73,8 +76,14 @@ export class HomeComponent {
             }
           });
         });
+    });
+  }
 
-      console.log(this.installments);
+  updateUser() {
+    const activeUserID = this.authService.getActiveUserId() as string;
+    this.userService.getUserInformation(activeUserID).subscribe((user) => {
+      this.user = user;
+      console.log('USER: ' + JSON.stringify(this.user));
     });
   }
 }
