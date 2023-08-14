@@ -149,7 +149,10 @@
           </mat-card-title>
         </mat-card-header>
         <mat-card-content class="dashboard-card-content">
-          <app-loan [installments]="installments"></app-loan>
+          <app-loan
+            [installments]="installments"
+            (updateTransactions)="handleTransactionUpdated()"
+          ></app-loan>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>

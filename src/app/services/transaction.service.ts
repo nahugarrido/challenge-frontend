@@ -17,42 +17,24 @@ export class TransactionService {
     );
   }
 
-  deposit(userID: string, amount: number): void {
-    this.http
-      .post(`${environment.baseURL}transactions/deposit/${userID}`, amount)
-      .subscribe(
-        (response) => {
-          console.log(response);
-        },
-        (error: HttpErrorResponse) => {
-          console.log(error);
-        }
-      );
+  deposit(userID: string, amount: number): Observable<any> {
+    return this.http.post(
+      `${environment.baseURL}transactions/deposit/${userID}`,
+      amount
+    );
   }
 
-  withdraw(userID: string, amount: number): void {
-    this.http
-      .post(`${environment.baseURL}transactions/withdraw/${userID}`, amount)
-      .subscribe(
-        (response) => {
-          console.log(response);
-        },
-        (error: HttpErrorResponse) => {
-          console.log(error);
-        }
-      );
+  withdraw(userID: string, amount: number): Observable<any> {
+    return this.http.post(
+      `${environment.baseURL}transactions/withdraw/${userID}`,
+      amount
+    );
   }
 
-  transfer(transfer: Transfer): void {
-    this.http
-      .post(`${environment.baseURL}transactions/transfer`, transfer)
-      .subscribe(
-        (response) => {
-          console.log(response);
-        },
-        (error: HttpErrorResponse) => {
-          console.log(error);
-        }
-      );
+  transfer(transfer: Transfer): Observable<any> {
+    return this.http.post(
+      `${environment.baseURL}transactions/transfer`,
+      transfer
+    );
   }
 }

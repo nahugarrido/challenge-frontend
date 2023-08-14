@@ -31,6 +31,9 @@ import { BalanceComponent } from './components/balance/balance.component';
 import { IncomeComponent } from './components/income/income.component';
 import { ExpenseComponent } from './components/expense/expense.component';
 import { GraphComponent } from './components/graph/graph.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { ModalLogoutComponent } from './components/modal-logout/modal-logout.component';
+import { ModalPaymentComponent } from './components/modal-payment/modal-payment.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +49,9 @@ import { GraphComponent } from './components/graph/graph.component';
     IncomeComponent,
     ExpenseComponent,
     GraphComponent,
+    NotFoundComponent,
+    ModalLogoutComponent,
+    ModalPaymentComponent,
   ],
   imports: [
     BrowserModule,

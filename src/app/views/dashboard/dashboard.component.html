@@ -9,7 +9,18 @@
   >
     <mat-toolbar class="logo"><span>LOGO</span></mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink="/dashboard/home">Home</a>
+      <div *ngFor="let item of items">
+        <a
+          mat-list-item
+          [routerLink]="['/dashboard/' + item.path]"
+          class="item-menu"
+        >
+          {{ item.name }}</a
+        >
+      </div>
+      <a mat-list-item class="item-menu" (click)="openLogOutDialog()">
+        Log Out</a
+      >
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

@@ -48,6 +48,8 @@
      font-size: 0.4em;
  }
 
+ .dialog .dialog-buttons {}
+
  @media(max-width: 768px) {
      .card-small {
          font-size: 2.2em;
