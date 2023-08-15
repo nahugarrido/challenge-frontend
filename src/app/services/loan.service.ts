@@ -15,19 +15,14 @@ export class LoanService {
     return this.http.get<Installment[]>(`${environment.baseURL}loans/${id}`);
   }
 
-  generateLoan(loan: LoanSaveDTO): void {
-    this.http.post(`${environment.baseURL}loans/generate`, loan).subscribe(
-      (response) => console.log(response),
-      (error) => console.log(error)
-    );
+  generateLoan(loan: LoanSaveDTO): Observable<any> {
+    return this.http.post(`${environment.baseURL}loans/generate`, loan);
   }
 
-  payInstallment(userId: number, installmentId: number): void {
-    this.http
-      .post(`${environment.baseURL}loans/${userId}/pay/${installmentId}`, {})
-      .subscribe(
-        (response) => console.log(response),
-        (error) => console.log(error)
-      );
+  payInstallment(userId: number, installmentId: number): Observable<any> {
+    return this.http.post(
+      `${environment.baseURL}loans/${userId}/pay/${installmentId}`,
+      {}
+    );
   }
 }

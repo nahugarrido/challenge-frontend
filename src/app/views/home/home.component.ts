@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { TransactionService } from 'src/app/services/transaction.service';
 import { Transaction } from 'src/app/models/transaction.model';
 import { AuthenticationService } from 'src/app/services/authentication.service';
@@ -17,7 +17,6 @@ export class HomeComponent {
   transactions: Transaction[] = [];
   installments: Installment[] = [];
   user!: User;
-  title = 'challenge-frontend';
   isMobile = false;
   rowHeightValue = '250px';
 
@@ -26,7 +25,8 @@ export class HomeComponent {
     private authService: AuthenticationService,
     private loanService: LoanService,
     private userService: UserService,
-    private breakpointObserver: BreakpointObserver
+    private breakpointObserver: BreakpointObserver,
+    private cdRef: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
@@ -40,6 +40,12 @@ export class HomeComponent {
         this.isMobile = result.matches;
         this.rowHeightValue = result.matches ? '160px' : '250px';
       });
+  }
+
+  handleTransactionUpdated() {
+    this.updateTransactions();
+    this.updateInstallments();
+    this.updateUser();
   }
 
   updateTransactions() {

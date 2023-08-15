@@ -3,10 +3,11 @@
   <span
     class="icon-percent"
     [ngClass]="{
-      'green-text': currentMonthExpenses > lastMonthExpenses,
-      'red-text': currentMonthExpenses < lastMonthExpenses,
+      'green-text': currentMonthExpenses < lastMonthExpenses,
+      'red-text': currentMonthExpenses > lastMonthExpenses,
     }"
   >
-    {{ expensesVariationPercentage.toFixed(2) }}%
+    {{ expensesVariationPercentage < 0 ? "+" : "-"
+    }}{{ expensesVariationPercentage.toFixed(2) }}%
   </span>
 </div>

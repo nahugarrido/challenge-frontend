@@ -67,3 +67,31 @@
   margin-left: auto;
   margin-right: 2%;
 }
+
+
+.item-menu {
+  padding: 0.6rem 2rem;
+  margin: 1rem 0;
+
+  &:hover {
+    background-color: rgba(75, 247, 149, 0.937);
+  }
+
+  &:focus {
+    background-color: rgba(75, 247, 149, 0.937);
+  }
+  
+}
+
+@media(max-width: 768px) {
+  .profile-picture {
+    margin: 0 12px;
+    width: 36px;
+    height: 36px;
+  
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
