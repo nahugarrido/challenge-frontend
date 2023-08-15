@@ -17,9 +17,6 @@ export class HomeComponent {
   transactions: Transaction[] = [];
   installments: Installment[] = [];
   user!: User;
-  newTransactions: Transaction[] = [];
-  newInstallments: Installment[] = [];
-  newUser!: User;
   isMobile = false;
   rowHeightValue = '250px';
 
@@ -47,12 +44,8 @@ export class HomeComponent {
 
   handleTransactionUpdated() {
     this.updateTransactions();
-    this.newTransactions = [...this.transactions];
     this.updateInstallments();
-    this.newInstallments = [...this.installments];
     this.updateUser();
-    this.newUser = this.user;
-    //this.cdRef.detectChanges();
   }
 
   updateTransactions() {

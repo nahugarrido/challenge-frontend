@@ -7,6 +7,7 @@
     'red-text': currentMonthIncome < lastMonthIncome,
   }"
   >
-    {{ incomeVariationPercentage.toFixed(2) }}%
+    {{ incomeVariationPercentage >= 0 ? "+" : "-"
+    }}{{ incomeVariationPercentage.toFixed(2) }}%
   </span>
 </div>
